@@ -217,7 +217,7 @@ $(".name").css("font-weight",settings.fonts.fontWeight);
 function checkLabels() {
   values.values.forEach(function(value, index) {
     $.get(value.path, function(data) {
-      $(".name").get(index).innerText = `${values.label}: ${data}`;
+      $(".name").get(index).innerText = `${value.label}: ${data}`;
     }); 
   });
 }
