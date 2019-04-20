@@ -77,7 +77,7 @@ var canvas,
     ctx;
 
 for (var i = 0; i < values.values.length ; i++) {
-    $("#nameHolder").append('<span class="name">' + values.values[i] + '</span>');
+    $("#nameHolder").append('<span class="name"></span>');
 }
 
 var boxTime = .4;
@@ -214,6 +214,15 @@ $(".name").css("font-size",settings.fonts.fontSize +"px");
 $(".name").css("top",settings.fonts.textYOffset +"px");
 $(".name").css("font-weight",settings.fonts.fontWeight);
 
+function checkLabels() {
+  values.values.forEach(function(value, index) {
+    $.get(value.path, function(data) {
+      $(".name").get(index).innerText = `${values.label}: ${data}`;
+    }); 
+  });
+}
+checkLabels();
+setInterval(checkLabels, 5000);
 </script>
 
 </body>
