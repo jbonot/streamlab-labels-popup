@@ -8,5 +8,9 @@
     "start": "http-server . -p 8080"
   },
   "author": "Jeanine Bonot",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "^2.1.2",
+    "jquery": "^3.4.0"
+  }
 }
