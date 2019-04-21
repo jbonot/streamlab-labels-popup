@@ -4,7 +4,6 @@ html,body {
 }
 body{ 
   overflow: hidden;
-  opacity: 0;
 }
 
 #socialHolder {

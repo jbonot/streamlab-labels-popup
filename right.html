@@ -91,28 +91,9 @@ var nameHolderW,
     fullWidth;
 
 function animate(){
-  tl.to("body", 0, {opacity: 1, delay: .3});
-// // fade in the box
-tl.fromTo("#iconBox", .6, {opacity: 0}, {opacity:1});
-
-// // move right and left
-tl.to("#canvasHolder", .1, {x:"+=20"})
-tl.to(square, .2, {morphSVG:"#bigRight"}, "-=.1")
-tl.to("#iconBox", .2, {x:"+=" + nameHolderW}, "-=.2")
-
-tl.to("#canvasHolder", .1, {x:"-=40"})
-tl.to(square, .2, {morphSVG:"#bigLeft"}, "-=.1")
-tl.to("#iconBox", .3, {x: -30}, "-=.2")
-tl.from("#nameHolder", .1, {opacity: 0, scaleX: 0, transformOrigin: "right center"}, "-=.2")
-
-tl.to("#canvasHolder", .1, {x:"+=20"})
-tl.to(square, .2, {morphSVG:"#littleRight"}, "-=.1")
-tl.to("#iconBox", .2, {x:"+=30"}, "-=.2")
-
-tl.to(square, .2, {morphSVG:"#square"})
 
 // Move Up and Down
-for (var i = 0; i < values.values.length -1 ; i++) {
+for (var i = 0; i < values.values.length; i++) {
   tl.to("#canvasHolder", .1, {y:"-=20", delay: settings.options.pauseTime})
   tl.to(square, .2, {morphSVG:"#bigUp"}, "-=.1")
   tl.to("#iconBox", .2, {y:"-=20"}, "-=.2")
@@ -131,17 +112,6 @@ for (var i = 0; i < values.values.length -1 ; i++) {
   tl.to("#iconBox", .2, {y:"-=20"}, "-=.2")
   tl.to("#canvasHolder", .1, {y:"-=15"}, "-=.2")
 }
-
-tl.to("#canvasHolder", .1, {x:"-=10", delay: settings.options.pauseTime})
-tl.to(square, .2, {morphSVG:"#littleLeft"},"-=.1")
-tl.to("#iconBox", .2, {x:"-=30"}, "-=.2")
-
-tl.to("#canvasHolder", .1, {x:"+=20"})
-tl.to(square, .2, {morphSVG:"#bigRight"}, "-=.1")
-tl.to("#iconBox", .3, {x:"+=" + fullWidth}, "-=.2")
-tl.to("#nameHolder", .2, {opacity: 0, scaleX: 0, transformOrigin: "right center"}, "-=.3")
-
-tl.to("body", 0, {opacity: 0, delay: settings.options.inbetweenPauseTime});
 }
 
 
