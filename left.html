@@ -222,7 +222,7 @@ function checkLabels() {
   });
 }
 checkLabels();
-setInterval(checkLabels, 5000);
+setInterval(checkLabels, settings.streamlabs.fetchRate * 1000);
 </script>
 
 </body>
