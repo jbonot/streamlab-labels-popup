@@ -1,3 +1,5 @@
 settings-and-images/*
+!settings-and-images/dataValues.js.example
+!settings-and-images/settings.js.example
 Streamlabs/*
 node_modules/*

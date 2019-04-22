@@ -1,0 +1,6 @@
+var values = {"values":[
+  {label: "Subscriber", path: ["./Streamlabs/most_recent_subscriber.txt"]},
+  {label:"Top Tipper", path: ["./Streamlabs/monthly_top_donator.txt"]},
+  {label:"Bits", path: ["./Streamlabs/most_recent_cheerer.txt"]},
+  {label:"Donation", path: ["./Streamlabs/most_recent_donator.txt"]}
+]};
