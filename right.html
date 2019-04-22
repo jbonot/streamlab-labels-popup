@@ -13,6 +13,7 @@
     <div id="iconBox">
       <div id="canvasHolder">
         <canvas id="canvas"></canvas>
+        <img id="bits" src="assets/img/bits.gif">
       </div>
       <div id="icons">
       
@@ -104,6 +105,7 @@ for (var i = 0; i < values.values.length; i++) {
   tl.to(".name", 0, {y:"-=100"}, "-=.1")
   tl.to("#canvas", 0, {y:"-=120"}, "-=.1")
   tl.to("#holder", .2, {y:"+=8"}, "-=.1")
+  tl.to("#bits", 0, {y:"-=120"}, "-=.1")
 
   tl.to("#holder", .2, {y:"-=8"}, "-=0")
 
