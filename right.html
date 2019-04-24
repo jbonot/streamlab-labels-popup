@@ -26,8 +26,6 @@
           <path id="bigRight" d="M20,120c0,0,6.6-13.1,6.6-50.2S20,20,20,20h50h50c0,0,17.9,12.7,17.9,49.8S120,120,120,120H70H20z"/>
           <path id="bigLeft" d="M120,20c0,0-6.6,13.1-6.6,50.2S120,120,120,120H70H20c0,0-17.9-12.7-17.9-49.8S20,20,20,20h50H120z"/>
           <path id="littleUp" d="M120,120c0,0-19-6.6-50-6.6S20,120,20,120V70V20c0,0,19-6.5,50-6.5s50,6.5,50,6.5v50V120z"/>
-          <path id="bigDown" d="M20,20c0,0,12.8,6.6,50,6.6s50-6.6,50-6.6v50v50c0,0-12.8,18.3-50,18.3S20,120,20,120V70V20z"/>
-          <path id="bigUp" d="M120,120c0,0-12.8-6.6-50-6.6S20,120,20,120V70V20c0,0,12.8-18.3,50-18.3S120,20,120,20v50V120z"/>
         </svg>
     </div>
   </div>
@@ -96,12 +94,8 @@ function animate(){
 // Move Up and Down
 for (var i = 0; i < values.values.length; i++) {
   tl.to("#canvasHolder", .1, {y:"-=20", delay: settings.options.pauseTime})
-  tl.to(square, .2, {morphSVG:"#bigUp"}, "-=.1")
-  tl.to("#iconBox", .2, {y:"-=20"}, "-=.2")
 
   tl.to("#canvasHolder", .1, {y:"+=35"})
-  tl.to(square, .2, {morphSVG:"#bigDown"}, "-=.1")
-  tl.to("#iconBox", .2, {y:"+=40"}, "-=.2")
   tl.to(".name", 0, {y:"-=100"}, "-=.1")
   tl.to("#canvas", 0, {y:"-=120"}, "-=.1")
   tl.to("#holder", .2, {y:"+=8"}, "-=.1")
@@ -109,9 +103,6 @@ for (var i = 0; i < values.values.length; i++) {
 
   tl.to("#holder", .2, {y:"-=8"}, "-=0")
 
-
-  tl.to(square, .2, {morphSVG:"#square"}, "-=.1")
-  tl.to("#iconBox", .2, {y:"-=20"}, "-=.2")
   tl.to("#canvasHolder", .1, {y:"-=15"}, "-=.2")
 }
 }
