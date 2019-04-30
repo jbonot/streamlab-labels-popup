@@ -79,7 +79,10 @@ for (var i = 0; i < values.values.length ; i++) {
     $("#nameHolder").append('<span class="name"></span>');
 }
 
-$("#nameHolder").append(`<span class="name">${settings.options.surprise}</span>`);
+var surprise = typeof settings.options.surprise !== 'undefined' && typeof settings.options.surpriseDuration !== 'undefined';
+if (surprise) {
+    $("#nameHolder").append(`<span class="name">${settings.options.surprise}</span>`);
+}
 
 var boxTime = .4;
 
@@ -94,8 +97,8 @@ var nameHolderW,
 function animate(){
 
 // Move Up and Down
-for (var i = 0; i < values.values.length + 1; i++) {
-  tl.to("#canvasHolder", .1, {y:"-=20", delay: i < values.values.length ? settings.options.pauseTime : settings.options.surpriseDuration})
+for (var i = 0; i < (surprise ? values.values.length + 1 : values.values.length); i++) {
+  tl.to("#canvasHolder", .1, {y:"-=20", delay: i == values.values.length ? settings.options.surpriseDuration : settings.options.pauseTime})
 
   tl.to("#canvasHolder", .1, {y:"+=35"})
   tl.to(".name", 0, {y:"-=100"}, "-=.1")
