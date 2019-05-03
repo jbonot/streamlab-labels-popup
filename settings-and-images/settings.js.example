@@ -1,8 +1,6 @@
 var settings = {
     "options": {
-        "pauseTime": "3",
-        "surprise": "SUB TO ZEUZ YOU IDIOT",
-        "surpriseDuration": .6
+        "pauseTime": "3"
     },
     "colors": {
         "iconBoxColor": "rgba(255, 255, 255, 1)",
