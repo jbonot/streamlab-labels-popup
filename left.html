@@ -8,26 +8,6 @@
 
 <div id="socialHolder">
   <div id="holder">
-    <div id="nameHolder">
-    </div>
-    <div id="iconBox">
-      <div id="canvasHolder">
-        <canvas id="canvas"></canvas>
-        <img id="bits" src="assets/img/bits.gif">
-      </div>
-      <div id="icons">
-      
-      </div>
-        <svg version="1.1" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-           viewBox="0 0 140 140" style="enable-background:new 0 0 140 140;" xml:space="preserve">
-          <path id="square" d="M120,120H70H20V70V20h50h50v50V120z"/>
-          <path id="littleLeft" d="M120,20c0,0-6.5,19-6.5,50s6.5,50,6.5,50H70H20c0,0-5.8-19-5.8-50S20,20,20,20h50H120z"/>
-          <path id="littleRight" d="M20,120c0,0,6.5-19,6.5-50S20,20,20,20h50h50c0,0,5.8,19,5.8,50s-5.8,50-5.8,50H70H20z"/>
-          <path id="bigRight" d="M20,120c0,0,6.6-13.1,6.6-50.2S20,20,20,20h50h50c0,0,17.9,12.7,17.9,49.8S120,120,120,120H70H20z"/>
-          <path id="bigLeft" d="M120,20c0,0-6.6,13.1-6.6,50.2S120,120,120,120H70H20c0,0-17.9-12.7-17.9-49.8S20,20,20,20h50H120z"/>
-          <path id="littleUp" d="M120,120c0,0-19-6.6-50-6.6S20,120,20,120V70V20c0,0,19-6.5,50-6.5s50,6.5,50,6.5v50V120z"/>
-        </svg>
-    </div>
   </div>
 </div>
 
@@ -76,7 +56,7 @@ var canvas,
     ctx;
 
 for (var i = 0; i < values.values.length ; i++) {
-    $("#nameHolder").append('<span class="name"></span>');
+    $("#holder").append('<div class="nameHolder"><span class="name"></span><div class="iconBox"></div></div>');
 }
 
 var boxTime = .4;
@@ -126,8 +106,8 @@ window.onload = init();
 
 // Set Appearence ======================
 
-$("#svg").css("fill",settings.colors.iconBoxColor);
-$("#nameHolder").css("background",settings.colors.textBoxColor);
+$(".iconBox").css("background",settings.colors.iconBoxColor);
+$(".nameHolder").css("background",settings.colors.textBoxColor);
 $(".name").css("color",settings.colors.fontColor);
 $(".name").css("font-size",settings.fonts.fontSize +"px");
 $(".name").css("top",settings.fonts.textYOffset +"px");

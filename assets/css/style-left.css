@@ -23,8 +23,8 @@ body{
   font-family: sans-serif;
 }
 
-#nameHolder{
-    position: relative;
+.nameHolder{
+    position: absolute;
     left: 0;
     top: 0;
     overflow: hidden;
@@ -40,7 +40,7 @@ body{
   display: block;
 }
 
-#iconBox {
+.iconBox {
   width: 140px;
   height: 140px;
   position: absolute;
@@ -48,7 +48,7 @@ body{
   right: -120px;
 }
 
-#iconBox svg {
+.iconBox svg {
   z-index: 99;
   position: absolute;
   width: 140px;
