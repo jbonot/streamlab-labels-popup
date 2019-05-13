@@ -28,9 +28,10 @@ body{
     left: 0;
     top: 0;
     overflow: hidden;
-    padding: 0 40px;
     max-height: 100px;
     white-space: nowrap;
+    width: 0;
+    padding: 0;
 }
 
 .name {

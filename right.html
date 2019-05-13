@@ -56,7 +56,7 @@ var canvas,
     ctx;
 
 for (var i = 0; i < values.values.length ; i++) {
-    $("#nameHolder").append('<span class="name"></span>');
+    $("#holder").append(`<div id="label-${i}" class="nameHolder"><span class="name"></span><div class="iconBox"></div></div>`);
 }
 
 var boxTime = .4;
@@ -73,17 +73,8 @@ function animate(){
 
 // Move Up and Down
 for (var i = 0; i < values.values.length; i++) {
-  tl.to("#canvasHolder", .1, {y:"-=20", delay: settings.options.pauseTime})
-
-  tl.to("#canvasHolder", .1, {y:"+=35"})
-  tl.to(".name", 0, {y:"-=100"}, "-=.1")
-  tl.to("#canvas", 0, {y:"-=120"}, "-=.1")
-  tl.to("#holder", .2, {y:"+=8"}, "-=.1")
-  tl.to("#bits", 0, {y:"-=120"}, "-=.1")
-
-  tl.to("#holder", .2, {y:"-=8"}, "-=0")
-
-  tl.to("#canvasHolder", .1, {y:"-=15"}, "-=.2")
+  tl.to(`#label-${i}`, .7, {left: "-" + settings.options.width + "px", width: settings.options.width + "px" , padding: "0 40px"}, "-=0")
+  tl.to(`#label-${i}`, .2, {y:"+=100", height: "0px", delay: settings.options.pauseTime})
 }
 }
 

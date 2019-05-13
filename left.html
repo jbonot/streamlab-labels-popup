@@ -56,7 +56,7 @@ var canvas,
     ctx;
 
 for (var i = 0; i < values.values.length ; i++) {
-    $("#holder").append('<div class="nameHolder"><span class="name"></span><div class="iconBox"></div></div>');
+    $("#holder").append(`<div id="label-${i}" class="nameHolder"><span class="name"></span><div class="iconBox"></div></div>`);
 }
 
 var boxTime = .4;
@@ -73,10 +73,10 @@ function animate(){
 
 // Move Up and Down
 for (var i = 0; i < values.values.length; i++) {
+  tl.to(`#label-${i}`, .7, {width: settings.options.width + "px" , padding: "0 40px"}, "-=0")
+  tl.to(`#label-${i}`, .2, {y:"+=100", height: "0px", delay: settings.options.pauseTime})
 }
 }
-
-
 
 // Initialize Canvas and Bind Events for canvas ======================
 
