@@ -8,26 +8,6 @@
 
 <div id="socialHolder">
   <div id="holder">
-    <div id="nameHolder">
-    </div>
-    <div id="iconBox">
-      <div id="canvasHolder">
-        <canvas id="canvas"></canvas>
-        <img id="bits" src="assets/img/bits.gif">
-      </div>
-      <div id="icons">
-      
-      </div>
-        <svg version="1.1" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-           viewBox="0 0 140 140" style="enable-background:new 0 0 140 140;" xml:space="preserve">
-          <path id="square" d="M120,120H70H20V70V20h50h50v50V120z"/>
-          <path id="littleLeft" d="M120,20c0,0-6.5,19-6.5,50s6.5,50,6.5,50H70H20c0,0-5.8-19-5.8-50S20,20,20,20h50H120z"/>
-          <path id="littleRight" d="M20,120c0,0,6.5-19,6.5-50S20,20,20,20h50h50c0,0,5.8,19,5.8,50s-5.8,50-5.8,50H70H20z"/>
-          <path id="bigRight" d="M20,120c0,0,6.6-13.1,6.6-50.2S20,20,20,20h50h50c0,0,17.9,12.7,17.9,49.8S120,120,120,120H70H20z"/>
-          <path id="bigLeft" d="M120,20c0,0-6.6,13.1-6.6,50.2S120,120,120,120H70H20c0,0-17.9-12.7-17.9-49.8S20,20,20,20h50H120z"/>
-          <path id="littleUp" d="M120,120c0,0-19-6.6-50-6.6S20,120,20,120V70V20c0,0,19-6.5,50-6.5s50,6.5,50,6.5v50V120z"/>
-        </svg>
-    </div>
   </div>
 </div>
 
@@ -112,38 +92,7 @@ for (var i = 0; i < values.values.length; i++) {
 // Initialize Canvas and Bind Events for canvas ======================
 
 function init() {
-  canvas = document.getElementById("canvas");
-  ctx = canvas.getContext("2d");
 } // end of init
-
-function changeBadge() {
-  imageURL = "settings-and-images/icon-sheet.png";
-
-  // Create image
-  badgeObject = new Image();
-
-  // When image loads, draw it
-  badgeObject.onload = function() {
-    imageLoaded = true;
-    draw();
-  };
-
-  // Load it
-  badgeObject.src = imageURL; 
-}
-changeBadge();
-
-// Draw Canvas Elements
-function draw() {
-  canvasHeight = badgeObject.height;
-  ctx.canvas.width = canvasWidth;
-  ctx.canvas.height = canvasHeight;
-
-  ctx.fillStyle = settings.colors.iconColor;
-  ctx.fillRect(0, 0, canvasWidth, canvasHeight);
-  ctx.globalCompositeOperation = "destination-atop";
-  ctx.drawImage(badgeObject, 0, 0);
-}
 
 if(settings.fonts.primaryFont==""){
   settings.fonts.primaryFont = "Montserrat";
@@ -155,13 +104,11 @@ WebFont.load({
     },
     active: function() {
       fontLoaded = true;
-      if(imageLoaded) {
-        $("#holder").css("font-family",settings.fonts.primaryFont);
-        nameHolderW = $("#nameHolder").width() + 80;
-        fullWidth = nameHolderW +240;
-        $("#holder").width(nameHolderW);
-        animate();
-      }
+      $("#holder").css("font-family",settings.fonts.primaryFont);
+      nameHolderW = $("#nameHolder").width() + 80;
+      fullWidth = nameHolderW +240;
+      $("#holder").width(nameHolderW);
+      animate();
     }
 });
 
@@ -170,8 +117,8 @@ window.onload = init();
 
 // Set Appearence ======================
 
-$("#svg").css("fill",settings.colors.iconBoxColor);
-$("#nameHolder").css("background",settings.colors.textBoxColor);
+$(".iconBox").css("background",settings.colors.iconBoxColor);
+$(".nameHolder").css("background",settings.colors.textBoxColor);
 $(".name").css("color",settings.colors.fontColor);
 $(".name").css("font-size",settings.fonts.fontSize +"px");
 $(".name").css("top",settings.fonts.textYOffset +"px");
