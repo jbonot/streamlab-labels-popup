@@ -56,7 +56,7 @@ var canvas,
     ctx;
 
 for (var i = 0; i < values.values.length ; i++) {
-    $("#holder").append(`<div id="label-${i}" class="nameHolder"><span class="name"></span><div class="iconBox"></div></div>`);
+    $("#holder").append(`<div id="label-${i}" class="nameHolder"><span class="name"></span><div id="iconBox-${i}" class="iconBox"></div></div>`);
 }
 
 var boxTime = .4;
@@ -73,6 +73,9 @@ function animate(){
 
 // Move Up and Down
 for (var i = 0; i < values.values.length; i++) {
+  tl.to(`#iconBox-${i}`, 0, {right: "0px"}, "-=.2")
+  tl.to(`#label-${i}`, .2, {width: "100px"}, "-=.2")
+  tl.to(`#iconBox-${i}`, .2, {right: "-40px"}, "-=0")
   tl.to(`#label-${i}`, .7, {width: settings.options.width + "px" , padding: "0 40px"}, "-=0")
   tl.to(`#label-${i}`, .2, {y:"+=100", height: "0px", delay: settings.options.pauseTime})
 }
