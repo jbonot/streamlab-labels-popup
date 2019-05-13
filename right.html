@@ -22,7 +22,7 @@
 var settings = {
     "options": {
         "pauseTime": "5",
-        "width": 700
+        "labelWidth": 700
     },
     "colors": {
         "iconBoxColor": "rgba(0, 0, 0, 1)",
@@ -79,7 +79,7 @@ for (var i = 0; i < values.values.length; i++) {
   tl.to(`#iconBox-${i}`, 0, {left: "0px"}, "-=.2")
   tl.to(`#label-${i}`, .2, {left: "-100px", width: "100px"}, "-=.2")
   tl.to(`#iconBox-${i}`, .2, {left: "-40px"}, "-=0")
-  tl.to(`#label-${i}`, .7, {left: "-" + settings.options.width + "px", width: settings.options.width + "px" , padding: "0 40px"}, "-=0")
+  tl.to(`#label-${i}`, .7, {left: "-" + settings.options.labelWidth + "px", width: settings.options.labelWidth + "px" , padding: "0 40px"}, "-=0")
   tl.to(`#label-${i}`, .2, {y:"+=100", height: "0px", delay: settings.options.pauseTime})
 }
 }
