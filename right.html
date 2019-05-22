@@ -114,7 +114,7 @@ window.onload = init();
 
 // Set Appearence ======================
 
-$(".iconBox").css("background",settings.colors.iconBoxColor);
+$(".iconBox").css("background-color",settings.colors.iconBoxColor);
 $(".nameHolder").css("background",settings.colors.textBoxColor);
 $(".name").css("color",settings.colors.fontColor);
 $(".name").css("font-size",settings.fonts.fontSize +"px");
@@ -123,6 +123,12 @@ $(".name").css("font-weight",settings.fonts.fontWeight);
 
 function checkLabels() {
   values.values.forEach(function(value, index) {
+    if (value.icon) {
+      $(`#iconBox-${index}`).css("background-image", `url("settings-and-images/${value.icon}")`);
+    } else {
+      $(`#iconBox-${index}`).css("background-image", `url("assets/img/neenHype.png")`);
+    }
+
     $.get(value.path, function(data) {
       $(".name").get(index).innerText = `${value.label}: ${data}`;
     }); 

@@ -48,6 +48,9 @@ body{
   position: absolute;
   top: -20px;
   left: -120px;
+  background-repeat: no-repeat;
+  background-size: 80px auto;
+  background-position: 50px center;
 }
 
 .iconBox svg {
