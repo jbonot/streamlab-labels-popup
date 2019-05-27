@@ -3,5 +3,5 @@ var values = {"values":[
   {label:"Subscriber", path: ["./Streamlabs/most_recent_subscriber.txt"], icon: "neenHype.png"},
   {label:"Top Tipper", path: ["./Streamlabs/monthly_top_donator.txt"], icon: "hype.png"},
   {label:"Donation", path: ["./Streamlabs/most_recent_donator.txt"], icon: "teehee.png"},
-  {label:"Sub Goal", path: ["./Streamlabs/total_subscriber_score.txt"], icon: "teehee.png", type: "goal", value: "300"}
+  {label:"Sub Goal", path: ["./Streamlabs/total_subscriber_score.txt"], icon: ["teehee.png","hype.png"], type: "goal", value: "300"}
 ]};

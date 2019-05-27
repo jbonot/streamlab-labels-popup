@@ -121,8 +121,34 @@ $(".name").css("font-size",settings.fonts.fontSize +"px");
 $(".name").css("top",settings.fonts.textYOffset +"px");
 $(".name").css("font-weight",settings.fonts.fontWeight);
 
+function initGoal(value, index) {
+  var imageUrl = 'url("assets/img/neenHype.png")';
+  $.get(value.path, function(data) {
+    var curr = data;
+    var goal = value.value;
+
+    if (Array.isArray(value.icon) && value.icon.length > 0) {
+      if (curr < goal) {
+        imageUrl = `url("settings-and-images/${value.icon[0]}`;
+      } else {
+        imageUrl = `url("settings-and-images/${value.icon[1]}`;
+      }
+    } else if (value.icon) {
+      imageUrl = `url("settings-and-images/${value.icon}")`;    
+    }
+
+    $(`#iconBox-${index}`).css("background-image", imageUrl);
+    $(".name").get(index).innerText = `${value.label}: ${curr} / ${goal}`;
+  });
+}
+
 function checkLabels() {
   values.values.forEach(function(value, index) {
+    if (value.type == "goal") {
+      initGoal(value, index);
+      return;
+    }
+
     if (value.icon) {
       $(`#iconBox-${index}`).css("background-image", `url("settings-and-images/${value.icon}")`);
     } else {
@@ -130,12 +156,7 @@ function checkLabels() {
     }
 
     $.get(value.path, function(data) {
-      var text = data;
-      if (value.type == "goal") {
-        text = `${data} / ${value.value}`;
-      }
-
-      $(".name").get(index).innerText = `${value.label}: ${text}`;
+      $(".name").get(index).innerText = `${value.label}: ${data}`;
     }); 
   });
 }
