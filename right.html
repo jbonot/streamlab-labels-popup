@@ -130,7 +130,12 @@ function checkLabels() {
     }
 
     $.get(value.path, function(data) {
-      $(".name").get(index).innerText = `${value.label}: ${data}`;
+      var text = data;
+      if (value.type == "goal") {
+        text = `${data} / ${value.value}`;
+      }
+
+      $(".name").get(index).innerText = `${value.label}: ${text}`;
     }); 
   });
 }
