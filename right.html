@@ -138,7 +138,7 @@ function initGoal(value, index) {
     }
 
     $(`#iconBox-${index}`).css("background-image", imageUrl);
-    $(".name").get(index).innerText = `${value.label}: ${curr} / ${goal}`;
+    $(".name").get(index).innerText = `${value.label}  ${curr} / ${goal}`;
   });
 }
 
@@ -156,7 +156,7 @@ function checkLabels() {
     }
 
     $.get(value.path, function(data) {
-      $(".name").get(index).innerText = `${value.label}: ${data}`;
+      $(".name").get(index).innerText = `${data}`;
     }); 
   });
 }
