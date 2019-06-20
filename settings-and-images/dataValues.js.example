@@ -1,5 +1,5 @@
 var values = {"values":[
-  {label:"Bits", path: ["./Streamlabs/most_recent_cheerer.txt"], icon: "bits.gif"},
+  {label:"Bits", path: ["./Streamlabs/most_recent_cheerer.txt"], type: "bits"},
   {label:"Subscriber", path: ["./Streamlabs/most_recent_subscriber.txt"], icon: "neenHype.png"},
   {label:"Top Tipper", path: ["./Streamlabs/monthly_top_donator.txt"], icon: "hype.png"},
   {label:"Donation", path: ["./Streamlabs/most_recent_donator.txt"], icon: "teehee.png"},

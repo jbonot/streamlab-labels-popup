@@ -17,5 +17,12 @@ var settings = {
     },
     "streamlabs": {
         "fetchRate" : 20
+    },
+    "bitIncrements": {
+        1:     "bits1.gif",
+        100:   "bits100.gif",
+        1000:  "bits1000.gif",
+        5000:  "bits5000.gif",
+        10000: "bits10000.gif"
     }
 };

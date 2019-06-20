@@ -140,10 +140,37 @@ function initGoal(value, index) {
   });
 }
 
+function initBits(value, index) {
+  var imageUrl = 'url("assets/img/neenHype.png")';
+  $.get(value.path, function(data) {
+    var bits = data.match(/[0-9]+$/g);
+    if (bits.length !== 1) {
+      return;
+    }
+
+    bits = Number(bits[0]);
+    for (var i in settings.bitIncrements) {
+      if (bits < i) {
+        break;
+      }
+
+      imageUrl = `url("settings-and-images/${settings.bitIncrements[i]}`;
+    }
+
+    $(`#iconBox-${index}`).css("background-image", imageUrl);
+    $(".name").get(index).innerText = data;
+  });
+}
+
 function checkLabels() {
   values.values.forEach(function(value, index) {
     if (value.type == "goal") {
       initGoal(value, index);
+      return;
+    }
+
+    if (value.type == "bits") {
+      initBits(value, index);
       return;
     }
 
