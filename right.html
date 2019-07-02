@@ -185,6 +185,7 @@ function checkLabels() {
     $.get(value.path, function(data) {
       if (data.length == 0) {
         $(".name").get(index).innerText = `Error 404 - ${value.label} Not Found`;
+        $(`#iconBox-${index}`).css("background-image", 'url("settings-and-images/404.png")');
       } else {
         $(".name").get(index).innerText = `${data}`;
       }
