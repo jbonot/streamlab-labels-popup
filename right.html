@@ -183,7 +183,11 @@ function checkLabels() {
     }
 
     $.get(value.path, function(data) {
-      $(".name").get(index).innerText = `${data}`;
+      if (data.length == 0) {
+        $(".name").get(index).innerText = `Error 404 - ${value.label} Not Found`;
+      } else {
+        $(".name").get(index).innerText = `${data}`;
+      }
     }); 
   });
 }
