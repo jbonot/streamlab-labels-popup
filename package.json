@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "gsap": "^2.1.2",
-    "jquery": "^3.4.0"
+    "jquery": "^3.5.0"
   }
 }
