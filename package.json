@@ -10,7 +10,7 @@
   "author": "Jeanine Bonot",
   "license": "ISC",
   "dependencies": {
-    "gsap": "^2.1.2",
+    "gsap": "^3.6.0",
     "jquery": "^3.4.0"
   }
 }
